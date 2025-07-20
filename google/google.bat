@@ -1,0 +1,1 @@
+curl "https://generativelanguage.googleapis.com:443/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyDbDr_ryHU75gbVRUo2oTVOUUEi3qvHNUg"   -H 'Content-Type: application/json'  -X POST   -d '{    "contents": [      {        "parts": [          {            "text": "What is dua Qunut?",          }        ]      }    ]  }'

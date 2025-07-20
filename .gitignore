@@ -1,0 +1,14 @@
+# Ignore common large files
+*.keras
+*.pth
+*.h5
+*.ckpt
+*.zip
+*.tar
+*.tar.gz
+*.npz
+*.npy
+*.pt
+# Ignore data folders
+data/
+__pycache__/
