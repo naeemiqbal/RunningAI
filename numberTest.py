@@ -12,15 +12,14 @@ numFashion 80%,70%
 numFashion10e 70%,70%
 """
 
-model = tf.keras.models.load_model('numFashion.keras')
-print("No image inverting applied.")
+model = tf.keras.models.load_model('../models/Number3.keras')
 corr=0
 for i in range(10):
   #  fil=f'../data/numNMI/test{i}.png'
     fil=f'../data/numNMI/s{i}.png'  
     img = Image.open(fil).convert('RGB')  # Ensure 3 channels
     img_array = np.array(img) / 255.0
-    img_array = tf.image.resize(img_array, (48, 48))
+    img_array = tf.image.resize(img_array, (48, 48)).numpy().astype(np.float32)  # Ensure float32 dtype
     img_array = np.expand_dims(img_array, axis=0)  # Add batch dimension
     pred = model.predict(img_array)
     predicted_class = np.argmax(pred)
