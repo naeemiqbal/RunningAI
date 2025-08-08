@@ -12,3 +12,7 @@
 # Ignore data folders
 data/
 __pycache__/
+
+#other common ignores   
+*.log
+*.tmp

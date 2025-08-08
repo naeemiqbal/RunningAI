@@ -7,15 +7,17 @@ import matplotlib.patches as patches
 
 #url = "http://images.cocodataset.org/val2017/000000039769.jpg"
 url= "https://staging.d1qeksakky7fvu.amplifyapp.com/NaeemIqbal.JPG"
-image = Image.open(requests.get(url, stream=True).raw)
+#image = Image.open(requests.get(url, stream=True).raw)
 image = Image.open("nmi.jpg")
 
-# you can specify the revision tag if you don't want the timm dependency
-processor = DetrImageProcessor.from_pretrained("facebook/detr-resnet-50", revision="no_timm")
-model = DetrForObjectDetection.from_pretrained("facebook/detr-resnet-50", revision="no_timm")
+modelName = "facebook/detr-resnet-50"
+modelName = "facebook/detr-resnet-101"
+
+processor = DetrImageProcessor.from_pretrained(modelName, revision="no_timm")
+model = DetrForObjectDetection.from_pretrained(modelName, revision="no_timm")
+
 inputs = processor(images=image, return_tensors="pt")
 outputs = model(**inputs)
-
 # convert outputs (bounding boxes and class logits) to COCO API
 # let's only keep detections with score > 0.5
 target_sizes = torch.tensor([image.size[::-1]])

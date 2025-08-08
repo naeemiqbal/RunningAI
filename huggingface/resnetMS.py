@@ -20,7 +20,8 @@ with torch.no_grad():
 # model predicts one of the 1000 ImageNet classes
 predicted_label = logits.argmax(-1).item()
 print(model.config.id2label[predicted_label])
-
+print (f"Predicted class: {predicted_label} - {model.config.id2label[predicted_label]}")
+print( f"{predicted_label} \n {logits} \nEnd.")
 #print(f"Detected {model.config.id2label[label.item()]} with confidence "          f"{round(score.item(), 3)} at location {box}")    
 
 """
