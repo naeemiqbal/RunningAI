@@ -11,6 +11,8 @@
 *.pt
 # Ignore data folders
 data/
+.gradio/
+runs/
 __pycache__/
 
 #other common ignores   

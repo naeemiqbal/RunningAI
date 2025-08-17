@@ -6,7 +6,7 @@ from ultralytics import YOLO
 import supervision as sv
 
 
-image_path = "dog.jpeg" #In parent foler, replace with your image path
+image_path = "nmi.jpg" #In parent foler, replace with your image path
 image = cv2.imread(image_path)
 
 model = YOLO('yolo12l.pt')

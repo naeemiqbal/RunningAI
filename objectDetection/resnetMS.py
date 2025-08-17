@@ -4,11 +4,12 @@ from datasets import load_dataset
 from PIL import Image
 import matplotlib.pyplot as plt
 
-#dataset = load_dataset("huggingface/cats-image")
-#image = dataset["test"]["image"][0]
+dataset = load_dataset("huggingface/cats-image")
+image = dataset["test"]["image"][0]
 #print ( image.size, image.mode   )
 image = Image.open("nmi.jpg")
-#plt.imshow(image)  plt.show()
+plt.imshow(image)
+plt.show()
 
 processor = AutoImageProcessor.from_pretrained("microsoft/resnet-50")
 model = ResNetForImageClassification.from_pretrained("microsoft/resnet-50")

@@ -6,7 +6,7 @@ model = genai.GenerativeModel( "gemini-1.5-flash-001")  # or genai.GenerativeAI
 
 # Upload the image file
 with open("test0.png", "rb") as f:
-    file_upload = model.files.upload(file=("test0.png", f, "image/png"))
+    file_upload = model.files.upload(file=("../test0.png", f, "image/png"))
 
 model.files.wait_for_upload(file_upload.id)
 # Use the uploaded file in a message

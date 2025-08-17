@@ -8,14 +8,14 @@ import io
 
 # --- Configuration ---
 # Ensure your API key is set as an environment variable
-API_KEY = os.getenv("GOOGLE_API_KEY")
+API_KEY = os.getenv("GENAI_API_KEY")
 if not API_KEY:
     raise ValueError("API_KEY environment variable not set.")
 
 genai.configure(api_key=API_KEY)
 
 # Define the expected JSON response structure for the Gemini API
-detection_schema = {
+detection_schema = {\
     "type": "ARRAY",
     "items": {
         "type": "OBJECT",
