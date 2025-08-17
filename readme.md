@@ -1,6 +1,6 @@
 # llm1
 
-A collection of deep learning, computer vision, and LLM experiments using local and remote models from Hugging Face, Google Gemini, YOLO, and more.
+A collection of experiments using local and remote models from HuggingFace, Google Gemini, YOLO, and more. This project does not train any models but uses pretrained models locally or calls remote models.
 
 ## Project Structure
 
