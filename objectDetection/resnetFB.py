@@ -4,14 +4,15 @@ from PIL import Image
 import requests
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
+import time
+start_time = time.time()
 
-#url = "http://images.cocodataset.org/val2017/000000039769.jpg"
 url= "https://staging.d1qeksakky7fvu.amplifyapp.com/NaeemIqbal.JPG"
 #image = Image.open(requests.get(url, stream=True).raw)
 image = Image.open("nmi.jpg")
 
-modelName = "facebook/detr-resnet-50"
-modelName = "facebook/detr-resnet-101"
+modelName ="facebook/detr-resnet-50"
+#modelName = "facebook/detr-resnet-101"
 
 processor = DetrImageProcessor.from_pretrained(modelName, revision="no_timm")
 model = DetrForObjectDetection.from_pretrained(modelName, revision="no_timm")
@@ -24,6 +25,7 @@ target_sizes = torch.tensor([image.size[::-1]])
 results = processor.post_process_object_detection(outputs, target_sizes=target_sizes, threshold=0.5)[0]
 
 print(results)
+print(f"Time taken {time.time() - start_time} seconds")
 fig, ax = plt.subplots()
 ax.imshow(image)
   

@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import time
 
 # Load the model
-yolo = YOLO('yolov8s.pt')
+yolo = YOLO('yolo12l.pt')
 
 # Load the video capture
 videoCap = cv2.VideoCapture(0)
@@ -12,7 +12,7 @@ keepOn = True
 # Function to get class colors
 def getColours(cls_num):
     base_colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
-    color_index = cls_num % len(base_colors)0
+    color_index = cls_num % len(base_colors)
     increments = [(1, -2, 1), (-2, 1, -1), (1, -1, 2)]
     color = [base_colors[color_index][i] + increments[color_index][i] * 
     (cls_num // len(base_colors)) % 256 for i in range(3)]

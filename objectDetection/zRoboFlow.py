@@ -1,9 +1,11 @@
+'''Bad '''
 from transformers import DetrImageProcessor, DetrForObjectDetection
 import torch
 from PIL import Image
 import requests
 
-image = Image.open("nmi.jpg")
+image = Image.open("fruits.jpg")
+
 
 # you can specify the revision tag if you don't want the timm dependency
 processor = DetrImageProcessor.from_pretrained("kariver/detr-resnet-50_finetuned_food-roboflow")
